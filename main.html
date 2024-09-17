@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script type="module" src="/JS/main.js"></script>
+    <style>
+        body, h1 {
+            font-family: "Raleway", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .bgimg {
+            background-image: url(/img/logo1.jpg);
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .logoutBtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+        }
+
+        #logout-button {
+            padding: 10px 20px;
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #logout-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Updated Styles for the image upload and gallery */
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#image-upload-form {
+    margin-bottom: 20px;
+}
+
+#imageFile {
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+            IM2 PROJECT
+        </div>
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top">WELCOME</h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <p class="w3-large w3-center">You are logged in as <span id="user-email">loading...</span></p>
+        </div>
+        <div class="logoutBtn">
+            <button id="logout-button">Logout</button>
+        </div>
+        <div class="w3-display-bottomleft w3-padding-large">
+            Created by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Jayvee M. Dairo</a>
+        </div>
+    </div>
+
+    <!-- New Section: Image Upload and Gallery -->
+    <div class="container">
+        <h2>Upload and Display Photos</h2>
+
+        <!-- Image Upload Form -->
+        <form id="image-upload-form">
+            <input type="file" id="imageFile" accept="image/*" required>
+            <button type="submit" class="w3-button w3-green">Upload Image</button>
+        </form>
+
+        <!-- Gallery Section -->
+        <div class="gallery" id="gallery"></div>
+    </div>
+</body>
+</html>
